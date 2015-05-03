@@ -1,9 +1,6 @@
 # FireAuth 
 
-<h1>How to use it:</h1>
-         <ul>
-                <li>Download the project from GitHub</li>
-                <li>in js/app.js replace fireBaseUrl with your own Firebase Application</li>
-                <li>Done</li>
-                
-            </ul>
+<h3>How to use it:</h3>
+- Download the project from GitHub
+- in js/app.js replace fireBaseUrl with your own Firebase Application
+- Done
