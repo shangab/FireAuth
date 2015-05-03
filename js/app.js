@@ -11,8 +11,8 @@ app.controller('Ctrl', function ($scope, $firebaseArray) {
                 console.log("Login Failed!", error);
             } else {
                 $scope.user = {uid: authData.uid, method: 'facebook', name: authData.facebook.displayName, picture: authData.facebook.cachedUserProfile.picture.data.url};
-                console.log($scope.user);
-                $scope.users.$add('Facebook User: ',$scope.user);
+                console.log('Facebook User: ',$scope.user);
+                $scope.users.$add($scope.user);
             }
         });
     };
@@ -23,8 +23,8 @@ app.controller('Ctrl', function ($scope, $firebaseArray) {
                 console.log("Login Failed!", error);
             } else {
                 $scope.user = {uid: authData.uid, method: 'github', name: authData.github.displayName, picture: authData.github.cachedUserProfile.avatar_url};
-                console.log($scope.user);
-                $scope.users.$add('Github User: ',$scope.user);
+                console.log('Github User: ',$scope.user);
+                $scope.users.$add($scope.user);
             }
         });
     };
