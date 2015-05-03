@@ -10,10 +10,9 @@ app.controller('Ctrl', function ($scope, $firebaseArray) {
             if (error) {
                 console.log("Login Failed!", error);
             } else {
-                console.log("Authenticated successfully with payload:", authData);
                 $scope.user = {uid: authData.uid, method: 'facebook', name: authData.facebook.displayName, picture: authData.facebook.cachedUserProfile.picture.data.url};
                 console.log($scope.user);
-                $scope.users.$add($scope.user);
+                $scope.users.$add('Facebook User: ',$scope.user);
             }
         });
     };
@@ -25,7 +24,7 @@ app.controller('Ctrl', function ($scope, $firebaseArray) {
             } else {
                 $scope.user = {uid: authData.uid, method: 'github', name: authData.github.displayName, picture: authData.github.cachedUserProfile.avatar_url};
                 console.log($scope.user);
-                $scope.users.$add($scope.user);
+                $scope.users.$add('Github User: ',$scope.user);
             }
         });
     };
@@ -49,7 +48,7 @@ app.controller('Ctrl', function ($scope, $firebaseArray) {
             } else {
                 console.log(authData);
                 $scope.user = {uid: authData.auth.uid, method: 'twitter', name: authData.twitter.displayName, picture: authData.twitter.cachedUserProfile.profile_image_url};
-                console.log('Google User: ', $scope.user);
+                console.log('Twitter User: ', $scope.user);
                 $scope.users.$add($scope.user);
             }
         });
